@@ -1,5 +1,5 @@
 import {LoaderFunction, json, redirect } from "@remix-run/node"
-import { productdelete } from "~/utils/product.server"
+import productdelete from "~/utils/product.server"
 
 export const loader: LoaderFunction = async ({ params }) => {
   const { productId } = params
@@ -9,4 +9,3 @@ export const loader: LoaderFunction = async ({ params }) => {
   await productdelete(productId)
   return redirect('/listproduct')
 }
- 

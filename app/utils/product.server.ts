@@ -57,15 +57,12 @@ export const getProductById = async (productId: string ) => {
 
 
 
-  export const  productdelete = async (productId: string ) => {
-    const  deleteproduct = await prisma.product.delete({
-        where: {
-            id: productId,
-    
-        },
-      })
-      return deleteproduct;
-}
-
-
-
+//delete product
+export default async function productdelete(productId: string) {
+    const deleteproduct = await prisma.product.delete({
+      where: {
+        id: productId,
+      },
+    });
+    return deleteproduct;
+  }
