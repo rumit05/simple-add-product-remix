@@ -1,4 +1,5 @@
 import { ActionFunction, json, redirect } from '@remix-run/node';
+import { Form } from '@remix-run/react';
 import React, { useState, ChangeEvent } from 'react';
 import { createProduct } from '~/utils/product.server';
 
@@ -67,7 +68,7 @@ const AddProduct: React.FC = () => {
   return (
     <div className="container">
       <h2 className="form-heading">Add Product</h2>
-      <form method="post">
+      <Form method="post">
         <div className="form-group">
           <label htmlFor="pname">Product Name</label>
           <input
@@ -144,7 +145,7 @@ const AddProduct: React.FC = () => {
         <button type="submit" className="button">
           Submit
         </button>
-      </form>
+      </Form>
     </div>
   );
 };

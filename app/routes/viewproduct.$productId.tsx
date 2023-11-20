@@ -1,5 +1,5 @@
 import {  LoaderFunction, json, redirect } from '@remix-run/node';
-import { Link, useLoaderData } from '@remix-run/react';
+import { Form, Link, useLoaderData } from '@remix-run/react';
 import { getProductById } from '~/utils/product.server';
 import { ChangeEvent, useEffect, useState } from 'react'
 
@@ -47,7 +47,7 @@ const ViewProduct: React.FC = () => {
   return (
     <div className="container">
       <h2 className="form-heading">View Product</h2>
-      <form method="post">
+      <Form method="post">
         <div className="form-group">
           <label htmlFor="pname">Product Name</label>
           <input
@@ -127,7 +127,7 @@ const ViewProduct: React.FC = () => {
         <button className="button">
             <Link to={'/listproduct'}>Close</Link>
             </button>
-      </form>
+      </Form>
     </div>
   );
 };
